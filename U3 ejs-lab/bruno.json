@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "U3 ejs-lab",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

@@ -1,11 +1,16 @@
+//git url: https://github.com/krynite/ejs-lab.git
+
 const express = require('express');
+const morgan = require("morgan")
+
 const app = express();
+const port = 3000
 
-let port = 3000
+app.use(morgan("dev"))
 
-app.get('/', (req, res) => {
-  res.send('Hello There!');
-});
+// app.get('/', (req, res) => {
+//   res.send('Hello There!');
+// });
 
 
 const RESTAURANT = {
@@ -56,6 +61,26 @@ const RESTAURANT = {
     }
   ]
 }
+
+//Ex 1
+
+app.get("/", (req,res)=>{
+    // let openStatus = ''                               //! Working! 
+    // if(RESTAURANT.isOpen === true){
+    //     openStatus = "Yes we are open!"
+    // } else {
+    //     openStatus = "Sorry, we are closed."
+    // }
+    
+    let restStatus =  RESTAURANT.isOpen ? "Yes we are open!" : "Sorry, we are closed.";
+
+    res.render("home.ejs", {RESTAURANT, restStatus} )
+})
+
+app.get("/menu", (req,res)=>{
+    res.render("menu.ejs",)
+
+})
 
 
 
