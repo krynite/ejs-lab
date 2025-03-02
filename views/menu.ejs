@@ -9,6 +9,70 @@
 <%- include("./partials/nav") %>
 <body>
     <h1>Full Menu</h1>
+    <h2>Mains</h2>
+    <ul>
+        <% menu.filter(item=> item.category === "mains").forEach((item) => { %>
+            <li>
+                <ul>
+                    <h3><%= item.name %></h3>
+                        <li>Price: $
+                            <%= item.price %>
+                        </li>
+                        <li>Rating: 
+                            <%= item.rating %>
+                        </li>
+                        <p>
+                            <%= item.details %>
+                        </p>
+                </ul>
+            </li>
+            <% }) %>
+    </ul>
+
+<h2>Sides</h2>
+<ul>
+    <% menu.filter(item=> item.category === "sides").forEach((item) => { %>
+        <li>
+            <ul>
+                <h3>
+                    <%= item.name %>
+                </h3>
+                <li>Price: $
+                    <%= item.price %>
+                </li>
+                <li>Rating: 
+                    <%= item.rating %>
+                </li>
+                <p>
+                    <%= item.details %>
+                </p>
+            </ul>
+        </li>
+        <% }) %>
+</ul>
+
+<h2>Desserts</h2>
+<ul>
+    <% menu.filter(item=> item.category === "desserts").forEach((item) => { %>
+        <li>
+            <ul>
+                <h3>
+                    <%= item.name %>
+                </h3>
+                <li>Price: $
+                    <%= item.price %>
+                </li>
+                <li>Rating: 
+                    <%= item.rating %>
+                </li>
+                <p>
+                    <%= item.details %>
+                </p>
+            </ul>
+        </li>
+        <% }) %>
+</ul>
+
 </body>
 
 </html>
